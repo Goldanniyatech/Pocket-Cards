@@ -1,19 +1,21 @@
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#    Python Pocket Card 01 The Basics     #
-#                                         #
-#         By Yoann AMAR ASSOULINE         #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
-# 🪙 PEP-8 Style Guides https://peps.python.org/pep-0008/ ♦ https://realpython.com/python-pep8/#naming-conventions  
+#!/usr/bin/python
+# (First line is called a Shebang)
 
+"""
+    🐍 Python Pocket Card 01 The Basics 🐍
 
+         By Yoann AMAR ASSOULINE
 
-# # # # # # # # # # # # # #
+  🪙 PEP-8 Style Guides https://peps.python.org/pep-0008/
+  🪙 https://realpython.com/python-pep8/#naming-conventions  
+"""  
+ 
+
+# # # # # # # # # # # # #  #
 #                         #
-#    💻 Commentaries      #
+#    💻 Commentaries     #
 #                         #
-# # # # # # # # # # # # # #
+# # # # # # # # # # # # #  #
 
 # Single-line Comment
 
@@ -29,11 +31,11 @@
 
 
 
-# # # # # # # # # # # # # # # # # # # # # # # # #
-#                                               #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                #
 # 💻 Python Standard Library Modules (Built-in) #
-#                                               #
-# # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
 # 🪙 https://docs.python.org/3/py-modindex.html 
 
 
@@ -114,6 +116,9 @@ player_total_life = player_health + player_shield
 
 player_name = "Jonesy" 
 character_select_sentence = "Select your character!"
+new_character_question = "What is your name?"
+print(new_character_question)
+new_character_name = input()
 
 # Collection of Variables: Real-life Examples 
 enemies = ["Alien", "Zombie"]

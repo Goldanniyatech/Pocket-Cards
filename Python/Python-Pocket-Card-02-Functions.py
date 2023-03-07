@@ -1,12 +1,15 @@
-###########################################
-#                                         #
-#    Python Pocket Card 02 Functions      #
-#                                         #
-#         By Yoann AMAR ASSOULINE         #
-#                                         #
-########################################### 
+#!/usr/bin/python
 
-# Built-in Modules 
+"""
+    🐍 Python Pocket Card 02 Functions 🐍
+
+         By Yoann AMAR ASSOULINE
+
+         
+""" 
+
+
+# Python Standard Library Modules 
 import os
 import sys
 
@@ -18,7 +21,7 @@ player_health = 100
 player_shield = 205.34
 
 #############################
-# 00 💻 Built-in Functions #
+# 💻 Built-in Functions #
 #############################
 # https://www.w3schools.com/python/python_ref_functions.asp
 # https://www.programiz.com/python-programming/methods/built-in

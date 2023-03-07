@@ -1,10 +1,12 @@
-###########################################
-#                                         #
-#    Python Pocket Card 03 Classes        #
-#                                         #
-#         By Yoann AMAR ASSOULINE         #
-#                                         #
-###########################################  
+#!/usr/bin/python
+
+"""
+    🐍 Python Pocket Card 03 Classes 🐍
+
+         By Yoann AMAR ASSOULINE
+
+         
+""" 
 
 # Built-in Modules 
 import os
