@@ -1,0 +1,42 @@
+/*  <link href="Core/Car.css" rel="stylesheet"> */
+
+:root {
+    /* Variables */ 
+    --variableName : red; 
+    --WebsiteBackground: rgb(166, 166, 255); 
+}
+
+/********************************
+ *  User Agent Stylesheet Reset 
+ *********************************/ 
+ 
+* {
+    margin: 0; 
+    padding: 0; 
+    font: inherit; 
+}
+
+html { 
+    height: 100vh; /* Viewport Height */ 
+    background-color: rgb(127, 127, 255);
+}
+
+body {
+
+}
+
+.MyClass {
+
+}
+
+.Car {
+
+}
+
+nav.Car {
+
+}
+
+#id {
+    
+}
