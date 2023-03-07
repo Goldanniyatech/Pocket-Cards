@@ -6,9 +6,7 @@
 #                                         #
 ###########################################
 
-# Reference
-# PEP-8 Style Guides https://peps.python.org/pep-0008/ 
-#                    https://realpython.com/python-pep8/#naming-conventions  
+# PEP-8 Style Guides https://peps.python.org/pep-0008/ ♦ https://realpython.com/python-pep8/#naming-conventions  
 
 
 
@@ -16,9 +14,9 @@
 # 00 💻 Commentaries #
 #######################
 
-# Single-line Commentaries 
+# Single-line Comment
 
-# Multi-line commetaries
+# Multi-line Comment
 # with the hash mark. 
 
 
@@ -29,18 +27,28 @@
           to automatically generate docstrings
 """
 
-##########################
-# 01 💻 Built-in Modules #
-##########################
 
+
+####################################################
+# 01 💻 Python Standard Library Modules (Built-in) #
+####################################################
+# https://docs.python.org/3/py-modindex.html 
+
+# Classic import
 import os
 import platform
 import sys
 
-# Clearing the Terminal by using the os imported module
-os.system('cls')
+# Import without specifying the module name (no need to type random._ when using modules' methods)
+from random import *
 
-# Displaying the current Operating System by using the platform module
+# Import a module and give it an alias 
+import random as randomAlias
+
+# Using a method from the imported module "os" to clear the terminal (for Windows only)
+os.system('cls')
+ 
+# Using a method from the "platform" module to display the current Operating System
 print("Current Platform: " + str(platform.platform()))
 
 
@@ -75,18 +83,19 @@ string_four = str(string_two + ", " + "Game Over!")
 string_five = '🦁'
 string_six = "453.5"
 
+
 # Collection of Variables: Theory
-list_one = ["item one", "item two", "item three"]
-
-tuple_one = ("item one", "item two", "item three")
-
-set_one = {"item one", "item two", "item three"}
-
 dictionary_one = {
         "key one"   : "value one", # one item is comprised of a key and a value
         "key two"   : "value two", 
         "key three" : "value three"
 }
+
+list_one = ["item one", "item two", "item three"] # Ordered collection
+
+set_one = {"item one", "item two", "item three"} # Unordered collection without Duplicate items.
+
+tuple_one = ("item one", "item two", "item three") 
 
 
 # Variables: Real-life Examples
@@ -108,6 +117,7 @@ allies = ("Ramirez", "Amy")
 math_operation_01 = 12 + (5 * 4^3 - 6)
 print ("math_operation_01: " + str(math_operation_01))
 
+
 #################################
 # 04 💻 Basic String Operations #
 #################################
@@ -120,11 +130,16 @@ print("\"Double quote inside a double quote string\"") # Same goes for \' single
 print('\r Carriage Return \t  Horizontal tab')
 print("🔴 Escape Sequence End")
 
+# String methods 
+test_string = "hello"
+placeholder_string = "Welcome to the fighting arena, {player}"
+
+print(test_string.capitalize())
+print(placeholder_string.format(player="Kazuya"))
 
 ################################
 # 05 💻 Conditional Statements # 
 ################################
-
 
 boolean_four = False 
 
@@ -143,18 +158,24 @@ if (integer_five < integer_six):
 # 06 💻 Loops #
 ################
 
-# For Looop 
-
+# For Loops
 vehicles = ("car", "bus", "train")
-
 for x in vehicles: 
     print("For Loop x: " + str(x))
 
-# While Loop 
 
+# While Loops 
 i = 1 
 n = 10
-
 while i < n: 
-    print ("While Loop i: " + str(i))
+    print ("While Loop i: " + str(i)) 
     i += 1
+    if i == 4: 
+        continue
+    if i == 8: 
+        break
+else: 
+    print("While Loop completed!")
+
+# Nested for & while loops
+

@@ -17,6 +17,21 @@ player_name = "Jonesy"
 player_health = 100 
 player_shield = 205.34
 
+#############################
+# 00 💻 Built-in Functions #
+#############################
+# https://www.w3schools.com/python/python_ref_functions.asp
+# https://www.programiz.com/python-programming/methods/built-in
+
+print() 
+
+input() 
+
+# Creating a Sequence of Numbers
+range()
+
+
+
 ##########################
 # 01 💻 Functions Basics #
 ##########################
@@ -47,7 +62,6 @@ print(check_variable_type(player_shield))
 
 # Print the docstring
 print(check_variable_type.__doc__)
-
 
 
 # Example Functions 

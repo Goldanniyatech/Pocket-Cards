@@ -10,36 +10,41 @@
 import os
 import platform
 import sys
+from abc import ABC, abstractmethod
 
+# Cleaning the Terminal
+if os.name == 'nt': os.system('cls')
+else: os.system('clear')
 
 #################################
 # 01 💻 Basic Classes
 #################################
 
-# Basic Class 01 
-class Animal: 
+class SimpleClass: 
     """ Docstring to document the whole Class """
 
-    # The constructor is always executed when the class is initiated! 
-    def __init__(self): 
-        """ Docstring to document any function (including the built-in __init__ function) """
-        pass # Statement to use as a placeholder. 
+    # Class Attributes
+    class_attribute_01 = 0 
+    class_attribute_02 = ""
 
-# Objects Instantiation
-Dolphin = Animal()
-Dinosaur = Animal() 
+    # Class Constructor, always executed when the Class is initialized.
+    def __init__ (self, instance_arg): 
+        """ Docstring to document any function (including the built-in __init__ function) """
+        # Instance Attributes
+        self.instance_attribute_01 = instance_arg
+
+    def simple_method (self): 
+        pass # Statement used as a placeholder
+
 
 
 # Basic Class 02 
 class Fruit: 
     """ Fruit Class """
-
-    # Class variables shared by all instances  
+ 
     category="Fruit"
 
-    def __init__(self, name_arg, quantity_arg = 1): 
-        """ """
-        # Instance variable unique to each instance 
+    def __init__(self, name_arg, quantity_arg = 1):  
         self.name = name_arg
         self.quantity = quantity_arg
     
@@ -51,11 +56,49 @@ strawberry = Fruit("Allstar", 3)
 cherry = Fruit("Early Lory")
 apple.show_name() 
 cherry.show_name()
-print(Fruit.category)
-print(Fruit.name)
+print(Fruit.category) 
+
+
+#################################
+# 02 💻 Abstract & Concrete Classes
+#################################
+
+# Abstract (Parent) Class  
+class Animal (ABC): 
+    """ Abstract (or Parent) Class 
+        Can't be instantiated
+    """
+
+    def __init__(self):  
+        """ By using the NotImplementedError, you can make sure the user will not try to instantiate the abstract class. 
+            That's only in case you're not using any abstractmethod. 
+        """
+        raise NotImplementedError("Cannot implement this") 
+ 
+    def eat (self): 
+        print("Animal is eating")
+
+
+# Concrete (Child) Class
+class Dolphin (Animal): 
+    """ Concrete (or Child) Class
+    """
+
+    def __init__ (self): 
+        print ("New Dolphin")
+
+# Objects Instantiation
+spinner_dolphin = Dolphin()
+# Dinosaur = Animal() # Will raise an error.  
+print (issubclass(Dolphin, Animal))
+print (isinstance(Dolphin(), Animal))
+
+
+
+
 
 # Basic Class 03
-class Vehicles: 
+class Vehicle (ABC): 
     """ Vehicle Class """
     
     # Class Variables 
@@ -63,28 +106,39 @@ class Vehicles:
 
     # Class constructor
     def __init__ (self, carName, carSeats, carTransmission): 
+
+        # Properties
         self.vehicle_name = carName 
         self.vehicle_seats = carSeats
         self.vehicle_transmission = carTransmission
      
-    # Class Methods 
-    def ConsoleClear(self): 
-        """ Clear the IDE Terminal/ Console on Windows """
-        if os.name == 'nt': os.system('cls')
-        else: os.system('clear')
-     
-    def showVehicleInformation(self): 
-        """ Showing some information about the vehicle """
-        self.ConsoleClear()
+        # Properties and Access levels 
+        self.vehicle_plate = None # Public Level
+        self._vehicle_start_button = None # Protected Level (one underscore before the variable name)
+        self.__vehicle_keys = None # Private Level (two underscores before the variable name)
+
+
+    @abstractmethod
+    def show_vehicle_info(self): 
+        pass 
+    
+    @abstractmethod
+    def car_driving(self): 
+        pass
+
+class Car(Vehicle): 
+ 
+    def show_vehicle_info (self): 
+        """ Showing some information about the vehicle """ 
         print("Vehicle Name: " + str(self.vehicle_name))
         print("Vehicle Seats: " + str(self.vehicle_seats)) 
         print("Vehicle Transmission: " + str(self.vehicle_transmission))
-     
-    def carDriving(self): 
+
+    def car_driving (self): 
         pass
+    
 
-
-Lamborghini = Vehicles("Lamborghini", 2, "Auto")
-#Lamborghini.showVehicleInformation() 
+Lamborghini = Car("Lamborghini", 2, "Auto")
+Lamborghini.show_vehicle_info() 
 
 
