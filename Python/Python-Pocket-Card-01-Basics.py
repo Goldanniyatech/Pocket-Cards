@@ -1,24 +1,24 @@
-###########################################
+# # # # # # # # # # # # # # # # # # # # # #
 #                                         #
 #    Python Pocket Card 01 The Basics     #
 #                                         #
 #         By Yoann AMAR ASSOULINE         #
 #                                         #
-###########################################
-
-# PEP-8 Style Guides https://peps.python.org/pep-0008/ ♦ https://realpython.com/python-pep8/#naming-conventions  
-
+# # # # # # # # # # # # # # # # # # # # # #
+# 🪙 PEP-8 Style Guides https://peps.python.org/pep-0008/ ♦ https://realpython.com/python-pep8/#naming-conventions  
 
 
-#######################
-# 00 💻 Commentaries #
-#######################
+
+# # # # # # # # # # # # # #
+#                         #
+#    💻 Commentaries      #
+#                         #
+# # # # # # # # # # # # # #
 
 # Single-line Comment
 
 # Multi-line Comment
-# with the hash mark. 
-
+# with the hash (or number sign/ pound sign) 
 
 """ Single line Docstring Comment """
 
@@ -29,21 +29,27 @@
 
 
 
-####################################################
-# 01 💻 Python Standard Library Modules (Built-in) #
-####################################################
-# https://docs.python.org/3/py-modindex.html 
+# # # # # # # # # # # # # # # # # # # # # # # # #
+#                                               #
+# 💻 Python Standard Library Modules (Built-in) #
+#                                               #
+# # # # # # # # # # # # # # # # # # # # # # # # #
+# 🪙 https://docs.python.org/3/py-modindex.html 
 
-# Classic import
+
+# Classic Module import
 import os
 import platform
 import sys
 
-# Import without specifying the module name (no need to type random._ when using modules' methods)
+# Import without specifying the module name when using it (no need to type random._ to access modules' methods)
 from random import *
 
-# Import a module and give it an alias 
+# Import a module and give an Alias 
 import random as randomAlias
+
+# Import Custom module only by typing their name
+# import MyCustomModule
 
 # Using a method from the imported module "os" to clear the terminal (for Windows only)
 os.system('cls')
@@ -52,11 +58,14 @@ os.system('cls')
 print("Current Platform: " + str(platform.platform()))
 
 
-############################### 
-#  02 💻 Basic Data Types    #
-###############################
+# # # # # # # # # # # # # # # # # # # # # #
+#                                         #
+#     💻 Variables & Basic Data Types     #
+#                                         #
+# # # # # # # # # # # # # # # # # # # # # #
+# Variables should be named after the snake_case convention (according to PEP-8 style guide)
 
-# Simple Variables: Theory
+# Basic Variables: Theory
 none_01 = None
 
 boolean_one = True
@@ -98,7 +107,7 @@ set_one = {"item one", "item two", "item three"} # Unordered collection without 
 tuple_one = ("item one", "item two", "item three") 
 
 
-# Variables: Real-life Examples
+# Basic Variables: Real-life Examples
 player_health = 100
 player_shield = 150.5
 player_total_life = player_health + player_shield
@@ -106,40 +115,87 @@ player_total_life = player_health + player_shield
 player_name = "Jonesy" 
 character_select_sentence = "Select your character!"
 
+# Collection of Variables: Real-life Examples 
 enemies = ["Alien", "Zombie"]
 allies = ("Ramirez", "Amy")
+vehicles = {
+    "Cars": ["Aston Martin DB5", "Ford Mustang MACH 1"], 
+    "Trucks": ("Dodge Ram 2500", "Chevrolet K10 Stepside"), 
+    "Bus": "Flying Bus"
+}
 
-###############################
-# 03 💻 Basic Data Operations #
-###############################
+video_game_settings = {
+    "Difficulty": "Hard", 
+    "Sound" : True, 
+    "Max Health/ Shield/ Extra-Armor": [150, 100, 120], 
+    "Controls": {
+        "move_up" : "Up_Arrow", 
+        "move_down": "Down_Arrow", 
+        "move_left": "Left_Arrow", 
+        "move_right": "Right_Arrow"
+    }, 
+    "Auto-Save": "Yes", 
+    "Defaut Camera Position" : (10, 40, 150)
+}
+
+video_game_weapons = { # Dictionary with multiple values per key, by using a list/ tuple/ set inside
+        "Assault Rifles": ["SCAR", "AK-47", "M16"], 
+        "Pistols": ("Hand Cannon", "Revolver", "Silenced Pistol")
+}
+
+
+print("Video Game Weapon (Assault Rifles): " + video_game_weapons["Assault Rifles"][1])
+
+
+# # # # # # # # # # # # # # # # # 
+#                               #
+#   💻 Basic Data Operations    #
+#                               #
+# # # # # # # # # # # # # # # # # 
 
 # PEMDAS
 math_operation_01 = 12 + (5 * 4^3 - 6)
 print ("math_operation_01: " + str(math_operation_01))
 
 
-#################################
-# 04 💻 Basic String Operations #
-#################################
+# # # # # # # # # # # # # # # # # # # 
+#                                   #
+#    💻 Basic String Operations    #
+#                                   #
+# # # # # # # # # # # # # # # # # # # 
 
-# String Escape Sequences 
-print('🔴 Escape Sequence Start')
-print("\\ Backslash")
-print("\n Newline")
-print("\"Double quote inside a double quote string\"") # Same goes for \' single quote strings
-print('\r Carriage Return \t  Horizontal tab')
-print("🔴 Escape Sequence End")
+print_string_sequence = False 
 
-# String methods 
-test_string = "hello"
-placeholder_string = "Welcome to the fighting arena, {player}"
+if (print_string_sequence): 
 
-print(test_string.capitalize())
-print(placeholder_string.format(player="Kazuya"))
+    # String Escape Sequences 
+    print('🔴 Escape Sequence Start')
+    print("\\ Backslash")
+    print("\n Newline")
+    print('Double quote inside a "single quote" string')
+    print("\"Double quote inside a double quote string\"") # Same goes for single quote! 
+    print('\r Carriage Return \t  Horizontal tab')
+    print("🔴 Escape Sequence End")
 
-################################
-# 05 💻 Conditional Statements # 
-################################
+    # String Methods 
+    test_string = "hello"
+    print(test_string.capitalize())
+
+    placeholder_string = "Welcome to the fighting arena, {player}"
+    print(placeholder_string.format(player="Kazuya"))
+    
+    # f-string (Formatting String)
+    print(f"Hello! {placeholder_string}")
+
+    # r-string (Raw Strings | Used to ignore escape sequences and treat everything as literal characters)
+    print(r'Hello\n How are you?')
+
+
+# # # # # # # # # # # # # # # # # # # 
+#                                   #
+#    💻 Conditional Statements      # 
+#                                   #
+# # # # # # # # # # # # # # # # # # # 
 
 boolean_four = False 
 
@@ -150,18 +206,23 @@ else:
 
 integer_five = 34
 integer_six = 60 
-if (integer_five < integer_six): 
+if (integer_five < integer_six) and boolean_four: 
     print("Higher") 
 
 
-################
-# 06 💻 Loops #
-################
+# # # # # # # # # # # # # # # # # # # 
+#                                   #
+#             💻 Loops              # 
+#                                   #
+# # # # # # # # # # # # # # # # # # # 
 
 # For Loops
 vehicles = ("car", "bus", "train")
 for x in vehicles: 
     print("For Loop x: " + str(x))
+
+for i in range(20): 
+    print (i)
 
 
 # While Loops 
@@ -177,5 +238,12 @@ while i < n:
 else: 
     print("While Loop completed!")
 
-# Nested for & while loops
+# Nested For & While Loops
+players = ["Player 1", "Player 2", "Player 3"]
+Enemies = ["Enemy 1", "Enemy 2", "Enemy 3"]
 
+for player in players: 
+    print(f"👾 {player} is attacking 👾 \n")
+
+    for enemy in enemies: 
+        print(" " + " " + f" {player} attacks {enemy}")
