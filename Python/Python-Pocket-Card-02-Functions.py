@@ -9,22 +9,45 @@
 """ 
 
 
-# Python Standard Library Modules 
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                #
+# 💻 Python Standard Library Modules (Built-in) #
+#                                                #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# 🪙 https://docs.python.org/3/py-modindex.html 
+# 🪙 https://www.w3schools.com/python/python_ref_functions.asp
+# 🪙 https://www.programiz.com/python-programming/methods/built-in
+
+
+# Python Standard Library (Importing modules) 
 import os
-import sys
+import platform
+import sys 
+from enum import Enum
 
-# Variables
-chest_is_open = True  
-player_name = "Jonesy"
+# Importing modules without without specifying their names when using them (For instance, no need to type random.randint() to access modules' class methods, only randint())
+from random import *
 
-player_health = 100 
-player_shield = 205.34
+# Importing modules and giving to each of them a specific alias 
+import random as randomAlias
 
-#############################
-# 💻 Built-in Functions #
-#############################
-# https://www.w3schools.com/python/python_ref_functions.asp
-# https://www.programiz.com/python-programming/methods/built-in
+# Importing third-party modules (with their corresponding packages installed with PIP)
+import customtkinter
+
+# Importing custom/ personal modules found in the exact same directory
+# import MyCustomModule
+
+
+
+
+# Using a method from the "os" module to clear the terminal (for Windows only)
+os.system('cls' if os.name == 'nt' else 'clear')
+ 
+# Using a method from the "platform" module to display the current Operating System
+print("Current Platform: " + platform.platform())
+ 
+
+
 
 print() 
 
@@ -33,7 +56,12 @@ input()
 # Creating a Sequence of Numbers
 range()
 
+# Variables
+chest_is_open = True  
+player_name = "Jonesy"
 
+player_health = 100 
+player_shield = 205.34
 
 ##########################
 # 01 💻 Functions Basics #

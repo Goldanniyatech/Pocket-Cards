@@ -30,106 +30,67 @@
 """
 
 
-
-# # # # # # # # # # # # # # # # # # # # # # # # # #
-#                                                #
-# 💻 Python Standard Library Modules (Built-in) #
-#                                                #
-# # # # # # # # # # # # # # # # # # # # # # # # # #
-# 🪙 https://docs.python.org/3/py-modindex.html 
-
-
-# Classic Module import
+# Python Standard Library (Importing modules) 
 import os
 import platform
-import sys
+import sys 
+from enum import Enum
 
-# Import without specifying the module name when using it (no need to type random._ to access modules' methods)
-from random import *
-
-# Import a module and give an Alias 
-import random as randomAlias
-
-# Import Custom module only by typing their name
-# import MyCustomModule
-
-# Using a method from the imported module "os" to clear the terminal (for Windows only)
-os.system('cls')
  
-# Using a method from the "platform" module to display the current Operating System
-print("Current Platform: " + str(platform.platform()))
-
-
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#     💻 Variables & Basic Data Types     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # #
+#                                          #
+#     💻 Variables & Basic Data Types    #
+#                                          #
+# # # # # # # # # # # # # # # # # # # # # # #
 # Variables should be named after the snake_case convention (according to PEP-8 style guide)
 
-# Basic Variables: Theory
-none_01 = None
+# None (or null) Data Type | The only way to define variables without assigning a proper value
+memory_card = None
 
-boolean_one = True
-boolean_two = False
-boolean_three = bool(True)
+# Boolean 
+game_speed_boot = True # Equivalent to 1 (The Python bool class inherit from the int class)
+player_has_key = False # Equivalent to 0
+player_has_car = bool(False) # Just to force the data type in python, since it's dynamically typed. 
 
-integer_one = 33
-integer_two = 30594
-integer_three = int(4930)
-integer_four = integer_one + integer_two
+# Integer  
+number_of_players = 1
+number_of_enemies = int(45)
+total_characters = number_of_players + number_of_enemies
+player_weapon_ammo = (200 +100) * 6 
 
-float_one = 30.3
-float_two = 4930.45
-float_three = float(458.78)
-float_four = float_one * float_two
+# Floating Point Numbers  
+player_health = 150.38
+player_shield = 220.5
+player_extra_armor = float(300.1)
+player_total_life = player_health + player_shield + player_extra_armor
+math_operation_01 = 12 + (5 * 4^3 - 6) # Remember about the PEMDAS rule 
 
+# Strings
+player_nickname = "Fighter"
+player_emblem = '🦁'
+playable_character_01 = "Jonesy"
+playable_character_02 = 'Ramirez' 
+playable_character_03 = 'Haven'  
+message_character_select = "Select your character!" 
+message_welcome = "Welcome" + " " + "to the battlefield"
+message_ending = str(player_nickname + ", " + "Game Over!")
+
+# Complex numbers
 complex_number_one = 2 + 3j
 complex_number_one = complex(3 + 2j)
 
-string_one = "Jonesy"  
-string_two = 'Ramirez'
-string_three = "Hello, Select your character!"
-string_four = str(string_two + ", " + "Game Over!")
-string_five = '🦁'
-string_six = "453.5"
-
-
-# Collection of Variables: Theory
-dictionary_one = {
-        "key one"   : "value one", # one item is comprised of a key and a value
+# Collection of Variables: Dictionaries
+cars_dict = {
+        "Toyota": "Corolla", # one dictionary item is comprised of a key (here the Toyota) and a value (here the Corolla)
         "key two"   : "value two", 
         "key three" : "value three"
 }
-
-list_one = ["item one", "item two", "item three"] # Ordered collection
-
-set_one = {"item one", "item two", "item three"} # Unordered collection without Duplicate items.
-
-tuple_one = ("item one", "item two", "item three") 
-
-
-# Basic Variables: Real-life Examples
-player_health = 100
-player_shield = 150.5
-player_total_life = player_health + player_shield
-
-player_name = "Jonesy" 
-character_select_sentence = "Select your character!"
-new_character_question = "What is your name?"
-print(new_character_question)
-new_character_name = input()
-
-# Collection of Variables: Real-life Examples 
-enemies = ["Alien", "Zombie"]
-allies = ("Ramirez", "Amy")
-vehicles = {
+vehicles_dict = {
     "Cars": ["Aston Martin DB5", "Ford Mustang MACH 1"], 
     "Trucks": ("Dodge Ram 2500", "Chevrolet K10 Stepside"), 
     "Bus": "Flying Bus"
 }
-
-video_game_settings = {
+game_settings_dict = {
     "Difficulty": "Hard", 
     "Sound" : True, 
     "Max Health/ Shield/ Extra-Armor": [150, 100, 120], 
@@ -142,25 +103,34 @@ video_game_settings = {
     "Auto-Save": "Yes", 
     "Defaut Camera Position" : (10, 40, 150)
 }
-
-video_game_weapons = { # Dictionary with multiple values per key, by using a list/ tuple/ set inside
+game_weapons_dict = { # Dictionary with multiple values per key, by using a list/ tuple/ set inside
         "Assault Rifles": ["SCAR", "AK-47", "M16"], 
         "Pistols": ("Hand Cannon", "Revolver", "Silenced Pistol")
 }
 
+# Collection of Variables: Lists
+characters_list = ["Jonesy", "Ramirez", "Haven"] # Ordered collection
 
-print("Video Game Weapon (Assault Rifles): " + video_game_weapons["Assault Rifles"][1])
+# Collection of Variables: Sets
+enemy_set = {"Zombie", "Werewolf", "Dragon"} # Unordered collection without Duplicate items.
 
+# Collection of Variables: Tuples
+weapons_tuple = ("Longsword", "Dagger", "Bow and Arrow") 
+allies = ("Amy", "Peely")
 
-# # # # # # # # # # # # # # # # # 
-#                               #
-#   💻 Basic Data Operations    #
-#                               #
-# # # # # # # # # # # # # # # # # 
+# Enum (extra data type. You need to use the Enum Module, from the Python Standard Library)
+class Day (Enum): 
+    MONDAY = 1 
+    TUESDAY = 2
+    WEDNESDAY = 3 
+    THURSDAY = 4 
+    FRIDAY = 5
+    SATURDAY = 6 
+    SUNDAY = 7
 
-# PEMDAS
-math_operation_01 = 12 + (5 * 4^3 - 6)
-print ("math_operation_01: " + str(math_operation_01))
+print("Video Game Weapon (Assault Rifles): " + game_weapons_dict["Assault Rifles"][1])
+print(f"Player nickname is: {player_nickname}")
+
 
 
 # # # # # # # # # # # # # # # # # # # 
@@ -173,21 +143,18 @@ print_string_sequence = False
 
 if (print_string_sequence): 
 
-    # String Escape Sequences 
-    print('🔴 Escape Sequence Start')
-    print("\\ Backslash")
-    print("\n Newline")
-    print('Double quote inside a "single quote" string')
-    print("\"Double quote inside a double quote string\"") # Same goes for single quote! 
-    print('\r Carriage Return \t  Horizontal tab')
-    print("🔴 Escape Sequence End")
+    # String Escape Sequences  
+    print("🔴 \\ Backslash")
+    print("🔴 \n Newline")
+    print('🔴 Double quote inside a "single quote" string')
+    print("🔴 \"Double quote inside a double quote string\"") # Same goes for single quote! 
+    print('🔴 \r Carriage Return \t  Horizontal tab') 
 
     # String Methods 
-    test_string = "hello"
-    print(test_string.capitalize())
-
-    placeholder_string = "Welcome to the fighting arena, {player}"
-    print(placeholder_string.format(player="Kazuya"))
+    player_armor_name = "hello"
+    print(player_armor_name.capitalize())
+    placeholder_string = "Welcome to the fighting arena, {fighter}"
+    print(placeholder_string.format(fighter="Kazuya"))
     
     # f-string (Formatting String)
     print(f"Hello! {placeholder_string}")
@@ -202,17 +169,50 @@ if (print_string_sequence):
 #                                   #
 # # # # # # # # # # # # # # # # # # # 
 
-boolean_four = False 
+player_has_car = False 
+key_is_gold = True
+number_of_keys = 4
 
-if (boolean_four) == False: 
-    print ('bool is false')
+if (player_has_car == True): 
+    print("vrai")
 else: 
-    print('bool is true')
+    print ("faux")
 
-integer_five = 34
-integer_six = 60 
-if (integer_five < integer_six) and boolean_four: 
-    print("Higher") 
+list1 = ["test"]
+list1 = ["super"]
+list1 = ["hey"]
+
+import os 
+os.system('cls')
+
+
+message_player_keys = input("combien de clés ? ")
+print(f" DEBUG 'message_player_keys': {message_player_keys}")
+if (message_player_keys > 2): 
+    print("3 clés au moins")
+elif (number_of_keys > 1): 
+    print ("2 clés au moins")
+elif (number_of_keys > 1): 
+    print ("2 clés au moins")
+elif (number_of_keys > 1): 
+    print ("2 clés au moins")
+else: 
+    print ("no key")
+
+if (number_of_players > 0):
+    print("hi")
+    my_number = 45 + 56
+elif (number_of_players == 1):
+    print("1 joueur")
+elif (number_of_players == 2):
+    print("1 joueur")
+elif (number_of_players > 2013 and number_of_players < 2020 ):
+    print("1 joueur")
+else:
+    print("1 joueur")
+print("hey")
+
+
 
 
 # # # # # # # # # # # # # # # # # # # 
@@ -228,6 +228,7 @@ for x in vehicles:
 
 for i in range(20): 
     print (i)
+    i += 1
 
 
 # While Loops 
@@ -245,7 +246,7 @@ else:
 
 # Nested For & While Loops
 players = ["Player 1", "Player 2", "Player 3"]
-Enemies = ["Enemy 1", "Enemy 2", "Enemy 3"]
+enemies = ["Enemy 1", "Enemy 2", "Enemy 3"]
 
 for player in players: 
     print(f"👾 {player} is attacking 👾 \n")
