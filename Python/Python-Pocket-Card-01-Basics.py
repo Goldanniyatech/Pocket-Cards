@@ -36,13 +36,15 @@ import platform
 import sys 
 from enum import Enum
 
+os.system('cls' if os.name == 'nt' else 'clear')
  
 # # # # # # # # # # # # # # # # # # # # # # #
 #                                          #
-#     💻 Variables & Basic Data Types    #
+#     💻 Variables & Data Types          #
 #                                          #
 # # # # # # # # # # # # # # # # # # # # # # #
 # Variables should be named after the snake_case convention (according to PEP-8 style guide)
+# Basic Data Types: 
 
 # None (or null) Data Type | The only way to define variables without assigning a proper value
 memory_card = None
@@ -79,17 +81,17 @@ message_ending = str(player_nickname + ", " + "Game Over!")
 complex_number_one = 2 + 3j
 complex_number_one = complex(3 + 2j)
 
+
 # Collection of Variables: Dictionaries
-cars_dict = {
-        "Toyota": "Corolla", # one dictionary item is comprised of a key (here the Toyota) and a value (here the Corolla)
-        "key two"   : "value two", 
-        "key three" : "value three"
-}
 vehicles_dict = {
-    "Cars": ["Aston Martin DB5", "Ford Mustang MACH 1"], 
-    "Trucks": ("Dodge Ram 2500", "Chevrolet K10 Stepside"), 
-    "Bus": "Flying Bus"
+    "Bus": "Flying Bus", # one dictionary item is comprised of a key (here the Bus category) and a value (here the Flying Bus model)
+    "Cars": ["Aston Martin DB5", "Ford Mustang MACH 1"], # Key with multiple values, by using a list/ tuple/ set inside
+    "Trucks": ("Dodge Ram 2500", "Chevrolet K10 Stepside")
 }
+vehicles_dict["Bus"] = "Grounded Bus" # Updating the value of a key 
+vehicles_dict["Motorcycles"] = "Harley Davidson" # adding a new key-value pair
+del vehicles_dict["Trucks"] # Removing a key-value pair
+
 game_settings_dict = {
     "Difficulty": "Hard", 
     "Sound" : True, 
@@ -103,20 +105,32 @@ game_settings_dict = {
     "Auto-Save": "Yes", 
     "Defaut Camera Position" : (10, 40, 150)
 }
-game_weapons_dict = { # Dictionary with multiple values per key, by using a list/ tuple/ set inside
-        "Assault Rifles": ["SCAR", "AK-47", "M16"], 
-        "Pistols": ("Hand Cannon", "Revolver", "Silenced Pistol")
-}
+
+dictionary_print_results = True 
+if (dictionary_print_results): 
+    print(vehicles_dict["Bus"]) 
+    print(f"⭐ Game Settings \n Difficulty: {game_settings_dict['Difficulty']}")
+    print(game_settings_dict["Controls"]["move_right"])
+    bus_inside_vehicles_dict = "Bus" in vehicles_dict # Checking if "Bus" key is inside dict
+    print(f"Bus inside vehicles_dict? {bus_inside_vehicles_dict}")
+
 
 # Collection of Variables: Lists
 characters_list = ["Jonesy", "Ramirez", "Haven"] # Ordered collection
 
+
 # Collection of Variables: Sets
 enemy_set = {"Zombie", "Werewolf", "Dragon"} # Unordered collection without Duplicate items.
+enemy_set.add("Vampire")
+enemy_set.remove("Zombie")
+
+# Collection of Variables: Frozensets (unchangeable)
+enemy_frozenset = frozenset(enemy_set)
 
 # Collection of Variables: Tuples
 weapons_tuple = ("Longsword", "Dagger", "Bow and Arrow") 
 allies = ("Amy", "Peely")
+
 
 # Enum (extra data type. You need to use the Enum Module, from the Python Standard Library)
 class Day (Enum): 
@@ -128,9 +142,6 @@ class Day (Enum):
     SATURDAY = 6 
     SUNDAY = 7
 
-print("Video Game Weapon (Assault Rifles): " + game_weapons_dict["Assault Rifles"][1])
-print(f"Player nickname is: {player_nickname}")
-
 
 
 # # # # # # # # # # # # # # # # # # # 
@@ -140,7 +151,6 @@ print(f"Player nickname is: {player_nickname}")
 # # # # # # # # # # # # # # # # # # # 
 
 print_string_sequence = False 
-
 if (print_string_sequence): 
 
     # String Escape Sequences  
@@ -148,7 +158,8 @@ if (print_string_sequence):
     print("🔴 \n Newline")
     print('🔴 Double quote inside a "single quote" string')
     print("🔴 \"Double quote inside a double quote string\"") # Same goes for single quote! 
-    print('🔴 \r Carriage Return \t  Horizontal tab') 
+    print('🔴 \r Carriage Return') 
+    print('🔴 \t Horizontal tabulation')
 
     # String Methods 
     player_armor_name = "hello"
@@ -182,11 +193,7 @@ list1 = ["test"]
 list1 = ["super"]
 list1 = ["hey"]
 
-import os 
-os.system('cls')
-
-
-message_player_keys = input("combien de clés ? ")
+message_player_keys = int(input("combien de clés ? "))
 print(f" DEBUG 'message_player_keys': {message_player_keys}")
 if (message_player_keys > 2): 
     print("3 clés au moins")
@@ -198,20 +205,6 @@ elif (number_of_keys > 1):
     print ("2 clés au moins")
 else: 
     print ("no key")
-
-if (number_of_players > 0):
-    print("hi")
-    my_number = 45 + 56
-elif (number_of_players == 1):
-    print("1 joueur")
-elif (number_of_players == 2):
-    print("1 joueur")
-elif (number_of_players > 2013 and number_of_players < 2020 ):
-    print("1 joueur")
-else:
-    print("1 joueur")
-print("hey")
-
 
 
 
