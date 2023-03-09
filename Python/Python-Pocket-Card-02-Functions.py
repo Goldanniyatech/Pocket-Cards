@@ -53,8 +53,7 @@ print()
 
 input() 
 
-# Creating a Sequence of Numbers
-range()
+# Creating a Sequence of Numbers 
 
 # Variables
 chest_is_open = True  
@@ -63,17 +62,43 @@ player_name = "Jonesy"
 player_health = 100 
 player_shield = 205.34
 
-##########################
-# 01 💻 Functions Basics #
-##########################
  
-# Simple Function writing
-def simple_function(): 
-    """ Function Comment (Docstring) """
-    print("This is a simple function")
+# # # # # # # # # # # # # # # # # # # # # # #
+#                                          #
+#     💻 Functions Basics                #
+#                                          #
+# # # # # # # # # # # # # # # # # # # # # # #
 
-# Simple Function Call
-simple_function()
+
+
+def spawn_enemy(): 
+    """ 
+    Simple Function to spawn an enemy 
+
+    You can test it out in docstring
+    >>> spawn_enemy() 
+    """
+    
+    # Local Variables (can't be accessed outside of the function) 
+    enemies_list = ["Goblin", "Orc"] 
+    enemy_max_health = 250 
+    current_enemies = 20
+    current_players = 30 
+
+    # Global Variables
+    global MAX_PLAYERS 
+    global MAX_ENEMIES
+    MAX_PLAYERS = 100
+    MAX_ENEMIES = 1500
+
+    if (current_players > current_enemies): 
+        old_enemies_count = current_enemies
+        current_enemies += randint(10, 50)
+        print(f"Enemies count went from {old_enemies_count} to {current_enemies}")
+
+# Function Call
+spawn_enemy()
+
 
 # Function with Three Arguments/ Parameters
 def function_with_arguments(arg1, arg2, arg3 = "my optional argument"):

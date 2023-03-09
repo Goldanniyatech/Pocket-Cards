@@ -43,8 +43,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 #     💻 Variables & Data Types          #
 #                                          #
 # # # # # # # # # # # # # # # # # # # # # # #
-# Variables should be named after the snake_case convention (according to PEP-8 style guide)
-# Basic Data Types: 
+# Variables should be named after the snake_case convention (according to PEP-8 style guide) 
 
 # None (or null) Data Type | The only way to define variables without assigning a proper value
 memory_card = None
@@ -142,7 +141,13 @@ class Day (Enum):
     SATURDAY = 6 
     SUNDAY = 7
 
+# Constants: There is no real constants in Python (i.e., variables you can't change). 
+# However, we conventionaly define constants in uppercase. 
+MAX_PLAYER = 100
+MAX_LEVEL_SIZE = 65535
 
+# Statement used as a placeholder
+pass
 
 # # # # # # # # # # # # # # # # # # # 
 #                                   #
