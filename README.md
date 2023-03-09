@@ -10,11 +10,17 @@ Of course, those cards are designed to be read within text editors such as Visua
 
 # Technologies 
 🌀 Assembly (MIPS): Fundamentals
+
 🌀 C: Fundamentals • Standard Library 
+
 🌀 C++: Fundamentals • Standard Library • Unreal Engine
+
 🌀 C#: Fundamentals • .NET Core • Unity
+
 🌀 Java: Fundamentals • Standard Library • JavaFX • JMonkey
+
 🌀 Python: Fundamentals • Python Standard Library • Panda3d
+
 🌀 Web: HTML • CSS & SASS/ SCSS • JavaScript • PHP
 
 # On 3D Engines 
