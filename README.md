@@ -9,19 +9,19 @@ In order to enhance each card provided with real-life examples, a small textual 
 Of course, those cards are designed to be read within text editors such as Visual Studio Code (or like Visual Studio, intelliJ, etc.), which differ quite a lot from notebooks like Jupyter. Additionally, I strive to maintain a limit of 1,000 lines per card for readability purposes.
 
 # Technologies 
-🌀 Assembly (MIPS): Fundamentals
+🌀 **Assembly (MIPS)**: Fundamentals
 
-🌀 C: Fundamentals • Standard Library 
+🌀 **C**: Fundamentals • Standard Library 
 
-🌀 C++: Fundamentals • Standard Library • Unreal Engine
+🌀 **C++**: Fundamentals • Standard Library • Unreal Engine
 
-🌀 C#: Fundamentals • .NET Core • Unity
+🌀 **C#**: Fundamentals • .NET Core • Unity
 
-🌀 Java: Fundamentals • Standard Library • JavaFX • JMonkey
+🌀 **Java**: Fundamentals • Standard Library • JavaFX • JMonkey
 
-🌀 Python: Fundamentals • Python Standard Library • Panda3d
+🌀 **Python**: Fundamentals • Python Standard Library • Panda3d
 
-🌀 Web: HTML • CSS & SASS/ SCSS • JavaScript • PHP
+🌀 **Web**: HTML • CSS & SASS/ SCSS • JavaScript • PHP
 
 # On 3D Engines 
 For Unity and Unreal Engine, due to the very huge number of files (even for a blank project), 
